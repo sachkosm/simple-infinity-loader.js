@@ -1,19 +1,23 @@
 import React from 'react';
 
 //Simple library to call a function as callback when the scroll bar reaches the bottom of the scroll space of the container
-//No dependencies
+
 //Input params:
-//  dropDownContainer: Dom Container that will have a VerticalScroll BAr
+//  dropDownContainer: Dom Container that will have a Vertical Scroll Bar
 //  callback: function that will be called when the scroll bar reaches the bottom of the scrolling space 
-//Return: undefined
-//Usage:  let iLoader = new inifityScrollLoader(dropDownContainer, callback)
-class inifityScrollLoader extends React.Component {
+
+
+//Usage:
+// <InifityScrollLoader callback={this.callbackFunction} >
+//     <DropDownContainer />    //Allows only one child
+// </InifityScrollLoader>
+class InifityScrollLoader extends React.Component {
 
     constructor(props) {
         super(props)
         this.callback = props.callback
         this.lastScrollTop = 0
-        this.dropDownContainer = props.dropDownContainer
+        this.dropDownContainer = this.props.children[0] //Allows only one DropDownContainer to be handled and it has to be the first child.
         this.dropDownContainer.scrollTop = 0;
         this.pixBeforeBottom = 20
     }
@@ -50,7 +54,7 @@ class inifityScrollLoader extends React.Component {
         this.dropDownContainer.removeEventListener('scroll', this.eventCallBack)
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.addListener()
     }
 
@@ -59,8 +63,12 @@ class inifityScrollLoader extends React.Component {
     }
 
     render() {
-        return (null)
+        return (
+            <React.Fragment>
+                {this.props.children[0]}
+            </React.Fragment>
+        )
     }
 }
 
-export default inifityScrollLoader;
+export default InifityScrollLoader;
