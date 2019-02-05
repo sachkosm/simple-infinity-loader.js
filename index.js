@@ -5,7 +5,6 @@
 //  callback: function that will be called when the scroll bar reaches the bottom of the scrolling space 
 //Return: undefined
 //Usage:  let iLoader = new inifityScrollLoader(dropDownContainer, callback)
-
 class inifityScrollLoader {
 
     constructor(dropDownContainer, callback) {
@@ -35,12 +34,18 @@ class inifityScrollLoader {
         }
     }
 
+    eventCallBack =(event)=>{
+        if (this.shouldLoadNext(this.dropDownContainer)) {
+            this.callback()
+        }
+    }
     addListener = () => {
-        this.dropDownContainer.addEventListener('scroll', (event) => {
-            if (this.shouldLoadNext(this.dropDownContainer)) {
-                this.callback()
-            }
-        })
+        //Make sure we do not duplicate eventlistener
+        this.dropDownContainer.removeEventListener('scroll', this.eventCallBack)
+        this.dropDownContainer.addEventListener('scroll', this.eventCallBack)
+    }
+    removeListener = () =>{
+        this.dropDownContainer.removeEventListener('scroll', this.eventCallBack)
     }
 }
 
