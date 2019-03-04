@@ -5,7 +5,7 @@
 //  callback: function that will be called when the scroll bar reaches the bottom of the scrolling space 
 //Return: undefined
 //Usage:  let iLoader = new inifityScrollLoader(dropDownContainer, callback)
-class inifityScrollLoader {
+class infinityScrollLoader {
 
     constructor(dropDownContainer, callback) {
         this.callback = callback
