@@ -49,4 +49,4 @@ class infinityScrollLoader {
     }
 }
 
-export default inifityScrollLoader;
+export default infinityScrollLoader;
