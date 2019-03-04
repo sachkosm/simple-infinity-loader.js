@@ -8,10 +8,10 @@ import React from 'react';
 
 
 //Usage:
-// <InifityScrollLoader callback={this.callbackFunction} >
+// <InfinityScrollLoader callback={this.callbackFunction} >
 //     <DropDownContainer />    //Allows only one child
-// </InifityScrollLoader>
-class InifityScrollLoader extends React.Component {
+// </InfinityScrollLoader>
+class InfinityScrollLoader extends React.Component {
 
     constructor(props) {
         super(props)
@@ -71,4 +71,4 @@ class InifityScrollLoader extends React.Component {
     }
 }
 
-export default InifityScrollLoader;
+export default InfinityScrollLoader;
