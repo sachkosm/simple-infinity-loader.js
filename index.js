@@ -1,10 +1,10 @@
 //Simple library to call a function as callback when the scroll bar reaches the bottom of the scroll space of the container
 //No dependencies
 //Input params:
-//  dropDownContainer: Dom Container that will have a VerticalScroll BAr
+//  dropDownContainer: Dom Container that will have a VerticalScroll Bar
 //  callback: function that will be called when the scroll bar reaches the bottom of the scrolling space 
 //Return: undefined
-//Usage:  let iLoader = new inifityScrollLoader(dropDownContainer, callback)
+//Usage:  let iLoader = new infinityScrollLoader(dropDownContainer, callback)
 class infinityScrollLoader {
 
     constructor(dropDownContainer, callback) {
