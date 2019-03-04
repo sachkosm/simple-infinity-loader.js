@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import inifityScrollLoader from "../infinity-scroll-loader";
+import infinityScrollLoader from "../infinity-scroll-loader";
 export default class Parent extends React.Component {
 
     constructor(props) {
@@ -65,7 +65,7 @@ class FieldSelector extends React.Component {
 
     componentDidMount() {
         let dropDownContainer = this.fieldSelectorRef
-        this.iLoader = new inifityScrollLoader(dropDownContainer, this.props.loadMoreSuggestions)
+        this.iLoader = new infinityScrollLoader(dropDownContainer, this.props.loadMoreSuggestions)
     }
 
     componentWillUnmount() {
